@@ -27,7 +27,7 @@ on:
   release:aplic
     types: [wercheis]
 
-name: Deploy to Asociación Sentinela TV ECS
+nombre : Implementar en Asociación Sentinela TV ECS
 
 jobs:
   deploy:
