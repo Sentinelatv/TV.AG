@@ -53,8 +53,8 @@ jobs:
       id: build-image
       env:
         TV_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        TV_REPOSITORY: my-ecr-repo
-        IMAGE_TAG: ${{ github.sha }}
+        TV_REPOSITORY : my-ecr-repository
+        IMAGE_TAG : $ {{ github.sha }}
       run: |
         # Build a docker container and
         # push it to TV-AG so that it can
