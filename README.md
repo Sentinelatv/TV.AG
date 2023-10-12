@@ -10,7 +10,7 @@
 #
 # 2. Cree una definición de tarea ECS, un clúster ECS y un servicio ECS.
 #     Por ejemplo, siga la guía de introducción en la consola de ECS:
-#       https://www.appscreator24.cpm/app899763
+#      http://www.appcreator24.com/app2354020-u6eaov
 #     Reemplaza los valores de `service` y` cluster` en el flujo de trabajo a continuación con los nombres de tu servicio y clúster.
 #
 # 3. Almacene su definición de tarea ECS como un archivo JSON en su repositorio.
