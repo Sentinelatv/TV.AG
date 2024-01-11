@@ -1,5 +1,5 @@
-# Este flujo de trabajo creará y enviará una nueva imagen de contenedor a Sentinelatv TV-AG.
-# y luego implementará una nueva definición de tarea en Sentinelatv  cuando se cree una versión
+# Este flujo de trabajo creará y enviará una nueva imagen de contenedor a Asociasion y Ahorros Sentinela TV-AG.
+# y luego implementará una nueva definición de tarea en Asociasion Y Ahorros Sentinela  cuando se cree una versión
 #
 # Para utilizar este flujo de trabajo, deberá completar los siguientes pasos de configuración:
 #
@@ -10,7 +10,7 @@
 #
 # 2. Cree una definición de tarea ECS, un clúster ECS y un servicio ECS.
 #     Por ejemplo, siga la guía de introducción en la consola de ECS:
-#      http://www.appcreator24.com/app2354020-u6eaov
+#      https://apk.e-droid.net/apk/app2354020-u6eaov.apk?v=24
 #     Reemplaza los valores de `service` y` cluster` en el flujo de trabajo a continuación con los nombres de tu servicio y clúster.
 #
 # 3. Almacene su definición de tarea ECS como un archivo JSON en su repositorio.
@@ -23,11 +23,11 @@
 #     Consulte la documentación de cada acción utilizada a continuación para conocer las políticas de IAM recomendadas para este usuario de IAM,
 #     y mejores prácticas sobre el manejo de las credenciales de la clave de acceso.
 
-en : Sentinelatv.
+en :Asociasion Y Ahorros Sentinela.
   liberación: aplic
-    tipos : [wercheis]
+    tipos : [Asociasion Y Ahorros Sentinela]
 
-nombre : Implementar en Asociación Sentinela TV ECS
+nombre : Implementar en Asociación Y Ahorros Sentinela ECS
 
 trabajos :
   desplegar :
@@ -38,18 +38,18 @@ trabajos :
     - nombre : Checkout
       usos : acciones / pago @ aplic
 
-    - nombre : configura las credenciales de TV
+    - nombre : configura las credenciales de AYS
       usos : tv-ag / configure-tv-credentials @ tv
       con :
         tv-ccess-key-id : $ {{secrets.tv_ACCESS_KEY_ID}}
         tv-secret-access-key : $ {{secrets.tv_SECRET_ACCESS_KEY}}
         tv-ag-region : us-east-1
 
-    - nombre : Iniciar sesión en asociación Sentinela TV-AG
+    - nombre : Iniciar sesión en asociación Y Ahorros Sentinela TV-AG
       id : login-tv
-      usos : tv-actions / Sentinela-ecr-login @ tv
+      usos : tv-actions / Asociasion-Y-Ahorros-Sentinela-ecr-login @ tv
 
-    - nombre : crear, etiquetar y enviar una imagen a la asociación Sentinela TV
+    - nombre : crear, etiquetar y enviar una imagen a la asociación Y Ahorros Sentinela
       id : build-image
       env :
         TV_REGISTRY : $ {{steps.login-ecr.outputs.registry}}
